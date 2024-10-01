@@ -1,0 +1,28 @@
+{
+  "Home": {
+    "test": "translated to english",
+    "title": "Home",
+    "changeLanguage": "Change language",
+    "welcome": "Welcome to KozakCLI Project",
+    "description": "A modern web development toolkit powered by Next.js and a suite of powerful tools.",
+    "poweredBy": "Powered by Next.js",
+    "tools": {
+      "Next.js": "The React Framework",
+      "TypeScript": "Typed JavaScript",
+      "Tailwind CSS": "Utility-first CSS framework",
+      "shadcn/ui": "Re-usable components",
+      "Zustand": "State management",
+      "Zod": "Schema validation",
+      "React Hook Form": "Form handling",
+      "Stripe": "Payment processing",
+      "Vercel": "Deployment platform",
+      "JSDoc": "Documentation",
+      "next-pwa": "Progressive Web App support",
+      "Inversify": "Dependency injection",
+      "Firebase": "Main database",
+      "SQLite": "Local cache",
+      "Framer Motion": "Animations",
+      "next-intl": "Internationalization"
+    }
+  }
+}

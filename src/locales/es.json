@@ -1,0 +1,28 @@
+{
+  "Home": {
+    "test": "traducido a español",
+    "title": "Inicio",
+    "changeLanguage": "Cambiar idioma",
+    "welcome": "Bienvenido al Proyecto KozakCLI",
+    "description": "Un conjunto de herramientas moderno para el desarrollo web, impulsado por Next.js y un conjunto de potentes herramientas.",
+    "poweredBy": "Desarrollado con Next.js",
+    "tools": {
+      "Next.js": "El Framework de React",
+      "TypeScript": "JavaScript con tipos",
+      "Tailwind CSS": "Framework CSS basado en utilidades",
+      "shadcn/ui": "Componentes reutilizables",
+      "Zustand": "Gestión de estado",
+      "Zod": "Validación de esquemas",
+      "React Hook Form": "Manejo de formularios",
+      "Stripe": "Procesamiento de pagos",
+      "Vercel": "Plataforma de despliegue",
+      "JSDoc": "Documentación",
+      "next-pwa": "Soporte para Progressive Web App",
+      "Inversify": "Inyección de dependencias",
+      "Firebase": "Base de datos principal",
+      "SQLite": "Caché local",
+      "Framer Motion": "Animaciones",
+      "next-intl": "Internacionalización"
+    }
+  }
+}

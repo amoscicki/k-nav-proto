@@ -1,0 +1,28 @@
+{
+  "Home": {
+    "test": "przetłumaczone na polski",
+    "title": "Strona główna",
+    "changeLanguage": "Zmień język",
+    "welcome": "Witaj w projekcie KozakCLI",
+    "description": "Nowoczesny zestaw narzędzi do tworzenia stron internetowych, oparty na Next.js i zestawie potężnych narzędzi.",
+    "poweredBy": "Zasilane przez Next.js",
+    "tools": {
+      "Next.js": "Framework React",
+      "TypeScript": "JavaScript z typami",
+      "Tailwind CSS": "Framework CSS oparty na klasach użytkowych",
+      "shadcn/ui": "Komponenty wielokrotnego użytku",
+      "Zustand": "Zarządzanie stanem",
+      "Zod": "Walidacja schematów",
+      "React Hook Form": "Obsługa formularzy",
+      "Stripe": "Przetwarzanie płatności",
+      "Vercel": "Platforma wdrożeniowa",
+      "JSDoc": "Dokumentacja",
+      "next-pwa": "Wsparcie dla Progressive Web App",
+      "Inversify": "Wstrzykiwanie zależności",
+      "Firebase": "Główna baza danych",
+      "SQLite": "Lokalna pamięć podręczna",
+      "Framer Motion": "Animacje",
+      "next-intl": "Internacjonalizacja"
+    }
+  }
+}
