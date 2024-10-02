@@ -1,6 +1,6 @@
 {
+  "test": "przetłumaczone na polski",
   "Home": {
-    "test": "przetłumaczone na polski",
     "title": "Strona główna",
     "changeLanguage": "Zmień język",
     "welcome": "Witaj w projekcie KozakCLI",

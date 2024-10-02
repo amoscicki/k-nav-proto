@@ -1,6 +1,6 @@
-import { NextRequest, NextResponse } from "next/server";
 import { join } from "path";
 import { readdirSync, readFileSync } from "fs";
+import { NextRequest, NextResponse } from "next/server";
 
 function getLocales() {
   if (typeof window === "undefined") {

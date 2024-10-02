@@ -7,22 +7,26 @@ Nuestro proyecto utiliza un sistema de traducción robusto basado en la bibliote
 ## Componentes clave y sus ubicaciones
 
 1. **ILocalizationService** (`src/lib/services/localization/localization-service.interface.ts`):
-    - Define la interfaz para el servicio de localización
+
+   - Define la interfaz para el servicio de localización
 
 2. **i18NextService** (`src/lib/services/localization/i18-next-service.ts`):
-    - Implementa la interfaz ILocalizationService
-    - Inicializa i18next
-    - Proporciona métodos para traducción, cambio de idioma y obtención de idiomas disponibles
+
+   - Implementa la interfaz ILocalizationService
+   - Inicializa i18next
+   - Proporciona métodos para traducción, cambio de idioma y obtención de idiomas disponibles
 
 3. **LanguageContext** (`src/contexts/language-context.tsx`):
-    - Proporciona el estado del idioma y métodos en toda la aplicación
-    - Exporta el hook useTranslations para un fácil acceso a las funciones de traducción
+
+   - Proporciona el estado del idioma y métodos en toda la aplicación
+   - Exporta el hook useTranslations para un fácil acceso a las funciones de traducción
 
 4. **AppContext** (`src/contexts/app-context.tsx`):
-    - Inicializa i18NextService utilizando Inversify para la inyección de dependencias
+
+   - Inicializa i18NextService utilizando Inversify para la inyección de dependencias
 
 5. **LanguageSelector** (`src/components/blocks/language-selector.tsx`):
-    - Un componente reutilizable para cambiar el idioma de la aplicación
+   - Un componente reutilizable para cambiar el idioma de la aplicación
 
 ## Detalles de implementación
 
@@ -55,6 +59,7 @@ Para utilizar la funcionalidad de traducción en tus componentes:
 [El código de ejemplo permanece en inglés, como en la documentación original]
 
 Los contextos trabajan juntos para proporcionar una experiencia de traducción fluida:
+
 - AppContext inicializa el servicio de localización.
 - LanguageContext gestiona el idioma actual y proporciona funciones de traducción.
 - Los componentes pueden acceder y utilizar fácilmente estas funciones a través del hook `useTranslations`.
@@ -64,23 +69,28 @@ Esta configuración nos permite cambiar fácilmente la implementación de ILocal
 ## Cómo usar
 
 1. Importa el hook useTranslations:
+
    ```typescript
-   import { useTranslations } from '@/contexts/language-context';
+   import { useTranslations } from "@/contexts/language-context";
    ```
 
 2. Usa el hook en tu componente:
+
    ```typescript
-   const { t, setLocale, getLocales, currentLanguage } = useTranslations('NombreDelEspacio');
+   const { t, setLocale, getLocales, currentLanguage } =
+     useTranslations("NombreDelEspacio");
    ```
 
 3. Traduce texto:
+
    ```typescript
    const textoTraducido = t`nombreClave`;
    ```
 
 4. Cambia el idioma:
+
    ```typescript
-   setLocale('es');
+   setLocale("es");
    ```
 
 5. Obtén los idiomas disponibles:

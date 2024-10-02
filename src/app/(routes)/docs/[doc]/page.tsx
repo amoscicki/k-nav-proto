@@ -3,7 +3,6 @@
 // import {readdir} from "node:fs/promises";
 // import {DocsMenu} from "@/components/blocks/docs-menu";
 
-
 // export async function getDocs() {
 //     const docsDirectory = path.join(process.cwd(), 'public', 'docs');
 //     return await readdir(docsDirectory);

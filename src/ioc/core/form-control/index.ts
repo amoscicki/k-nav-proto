@@ -26,7 +26,7 @@ export interface IFormService<T> {
   getFieldError: <K extends keyof T>(name: K) => string | undefined;
   validate: () => Promise<boolean>;
   handleSubmit: (
-    onSubmit: (values: T) => Promise<void>
+    onSubmit: (values: T) => Promise<void>,
   ) => (e?: React.FormEvent) => Promise<void>;
   getFormState: () => IFormState<T>;
   getFormActions: () => IFormActions;

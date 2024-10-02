@@ -53,7 +53,7 @@ export class FirebaseService implements IDatabaseService {
   async update<T>(
     collectionName: string,
     id: string,
-    data: Partial<T>
+    data: Partial<T>,
   ): Promise<void> {
     const docRef = doc(this.db, collectionName, id);
     await updateDoc(docRef, data as any);

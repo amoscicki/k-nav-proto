@@ -8,7 +8,7 @@
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "types": ["reflect-metadata", "jest", "node"],
+    "types": ["reflect-metadata", "node"],
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,

@@ -47,7 +47,7 @@ export class ZodValidationService implements IValidationService {
 
   async validateObject<T>(
     schema: Record<keyof T, IValidationRule<any>>,
-    data: unknown
+    data: unknown,
   ): Promise<T> {
     const result: Partial<T> = {};
     const errors: Record<string, string> = {};

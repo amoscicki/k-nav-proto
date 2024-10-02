@@ -1,8 +1,9 @@
 import "reflect-metadata";
 import { AppConfig, bindConfig } from "../index";
 import { TYPES } from "../types";
-import { defaultLoggerService } from "@/ioc/core/logger";
-import { defaultLocalizationService } from "@/ioc/core/localization";
+import { defaultLoggerService } from "../logger";
+import { defaultLocalizationService } from "../localization";
+import { describe, expect, it } from "vitest";
 
 const testConfig: AppConfig = {
   LoggerService: {

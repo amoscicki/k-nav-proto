@@ -7,22 +7,26 @@ Our project utilizes a robust translation system based on the i18next library, s
 ## Key Components and Their Locations
 
 1. **ILocalizationService** (`src/lib/services/localization/localization-service.interface.ts`):
-    - Defines the interface for the localization service
+
+   - Defines the interface for the localization service
 
 2. **i18NextService** (`src/lib/services/localization/i18-next-service.ts`):
-    - Implements the ILocalizationService interface
-    - Initializes i18next
-    - Provides methods for translation, language changing, and retrieving available languages
+
+   - Implements the ILocalizationService interface
+   - Initializes i18next
+   - Provides methods for translation, language changing, and retrieving available languages
 
 3. **LanguageContext** (`src/contexts/language-context.tsx`):
-    - Provides language state and methods throughout the application
-    - Exports the useTranslations hook for easy access to translation functions
+
+   - Provides language state and methods throughout the application
+   - Exports the useTranslations hook for easy access to translation functions
 
 4. **AppContext** (`src/contexts/app-context.tsx`):
-    - Initializes i18NextService using Inversify for dependency injection
+
+   - Initializes i18NextService using Inversify for dependency injection
 
 5. **LanguageSelector** (`src/components/blocks/language-selector.tsx`):
-    - A reusable component for changing the application language
+   - A reusable component for changing the application language
 
 ## Implementation Details
 
@@ -30,9 +34,9 @@ Our project utilizes a robust translation system based on the i18next library, s
 
 ```typescript
 export interface ILocalizationService {
-    t(key: string): string;
-    setLocale(locale: string): void;
-    getLocales(): string[];
+  t(key: string): string;
+  setLocale(locale: string): void;
+  getLocales(): string[];
 }
 ```
 
@@ -41,29 +45,33 @@ export interface ILocalizationService {
 ```typescript
 @injectable()
 export class i18NextService implements ILocalizationService {
-    private i18nInstance: typeof i18next;
+  private i18nInstance: typeof i18next;
 
-    constructor() {
-        this.i18nInstance = i18next.createInstance({
-            lng: 'en',
-            fallbackLng: 'en',
-            resources: { en: { translation: en }, pl: { translation: pl }, es: { translation: es } },
-            interpolation: { escapeValue: false },
-        });
-        this.i18nInstance.init();
-    }
+  constructor() {
+    this.i18nInstance = i18next.createInstance({
+      lng: "en",
+      fallbackLng: "en",
+      resources: {
+        en: { translation: en },
+        pl: { translation: pl },
+        es: { translation: es },
+      },
+      interpolation: { escapeValue: false },
+    });
+    this.i18nInstance.init();
+  }
 
-    t = (key: string): string => {
-        return this.i18nInstance.t(key);
-    }
+  t = (key: string): string => {
+    return this.i18nInstance.t(key);
+  };
 
-    setLocale = (locale: string): void => {
-        this.i18nInstance.changeLanguage(locale);
-    }
+  setLocale = (locale: string): void => {
+    this.i18nInstance.changeLanguage(locale);
+  };
 
-    getLocales = (): string[] => {
-        return Object.keys(this.i18nInstance.options.resources || {});
-    }
+  getLocales = (): string[] => {
+    return Object.keys(this.i18nInstance.options.resources || {});
+  };
 }
 ```
 
@@ -72,13 +80,16 @@ export class i18NextService implements ILocalizationService {
 We use Inversify for dependency injection. Here's how it's set up in `src/lib/ioc/container.ts`:
 
 ```typescript
-import { Container } from 'inversify';
-import { TYPES } from './types';
-import { ILocalizationService } from '../services/localization/localization-service.interface';
-import { i18NextService } from '../services/localization/i18-next-service';
+import { Container } from "inversify";
+import { TYPES } from "./types";
+import { ILocalizationService } from "../services/localization/localization-service.interface";
+import { i18NextService } from "../services/localization/i18-next-service";
 
 const container = new Container();
-container.bind<ILocalizationService>(TYPES.LocalizationService).to(i18NextService).inSingletonScope();
+container
+  .bind<ILocalizationService>(TYPES.LocalizationService)
+  .to(i18NextService)
+  .inSingletonScope();
 ```
 
 ## Context Implementation
@@ -222,33 +233,38 @@ function YourComponent() {
 ```
 
 The contexts work together to provide a seamless translation experience:
+
 - AppContext initializes the localization service.
 - LanguageContext manages the current language and provides translation functions.
 - Components can easily access and use these functions through the `useTranslations` hook.
-
 
 This setup allows us to easily swap the implementation of ILocalizationService if needed, without changing the consuming code.
 
 ## How to Use
 
 1. Import the useTranslations hook:
+
    ```typescript
-   import { useTranslations } from '@/contexts/language-context';
+   import { useTranslations } from "@/contexts/language-context";
    ```
 
 2. Use the hook in your component:
+
    ```typescript
-   const { t, setLocale, getLocales, currentLanguage } = useTranslations('NamespaceName');
+   const { t, setLocale, getLocales, currentLanguage } =
+     useTranslations("NamespaceName");
    ```
 
 3. Translate text:
+
    ```typescript
    const translatedText = t`keyName`;
    ```
 
 4. Change language:
+
    ```typescript
-   setLocale('en');
+   setLocale("en");
    ```
 
 5. Get available languages:
